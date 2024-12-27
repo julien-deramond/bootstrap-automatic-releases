@@ -13,4 +13,5 @@ This repository is a copy of the Bootstrap repository with a few changes to make
 
 Here are the changes that could be made to the original Bootstrap repository to have automatic releases:
 
+- Remove `dist` directory and add it to `.gitignore`
 - Adapt BrowserStack workflow (not done here because it requires a BrowserStack account)
