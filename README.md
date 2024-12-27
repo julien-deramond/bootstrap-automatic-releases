@@ -14,4 +14,5 @@ This repository is a copy of the Bootstrap repository with a few changes to make
 Here are the changes that could be made to the original Bootstrap repository to have automatic releases:
 
 - Remove `dist` directory and add it to `.gitignore` ([c0797cb](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/c0797cb743c6f6b839b451d66a84a558871f9c3a))
+- Add eslint ignore rule `eslint-disable-line import/no-unresolved` to `/js/tests/integration/bundle.js` to fix `npm run lint` without having to build the library
 - Adapt BrowserStack workflow (not done here because it requires a BrowserStack account)
