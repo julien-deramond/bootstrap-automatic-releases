@@ -11,7 +11,9 @@ This repository is a copy of the Bootstrap repository with a few changes to make
 
 ## Changes
 
-Here are the changes that could be made to the original Bootstrap repository to have automatic releases:
+Here are the changes that could be made to the original Bootstrap repository to have automatic releases.
+
+### Get rid of the `dist` directory
 
 - Remove `dist` directory and add it to `.gitignore` ([c0797cb](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/c0797cb743c6f6b839b451d66a84a558871f9c3a))
 - Add eslint ignore rule `eslint-disable-line import/no-unresolved` to `/js/tests/integration/bundle.js` to fix `npm run lint` without having to build the library ([6d959ab](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/6d959ab51cf97644e512e99e71f0b8b6aa1605f7))
