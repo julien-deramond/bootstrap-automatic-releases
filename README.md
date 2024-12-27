@@ -7,6 +7,7 @@ This repository is a copy of the Bootstrap repository with a few changes to make
 - Removed `.github/dependabot.yml` file to avoid having Dependabot alerts
 - Fixed CSpell action by adding "deramond" to the dictionary ([45bd8d9](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/45bd8d9f05bb9f5c0e479ea95a83eac007a6d281))
 - Disabled BrowserStack workflow because it requires a BrowserStack account. However, it should be pretty easy to make it work afterward when the automatic release is set up in Bootstrap. ([77eb394](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/77eb39406c5c8f1630983ecc70738cbc45820c34))
+- Configured Netlify to deploy the _main_ branch at https://bootstrap-automatic-releases.netlify.app/
 
 ## Changes
 
