@@ -14,7 +14,7 @@ jobs:
       issues: write
       pull-requests: write
     runs-on: ubuntu-latest
-    if: github.repository == 'twbs/bootstrap'
+    if: github.repository == 'julien-deramond/bootstrap-automatic-releases'
     steps:
       - name: awaiting reply
         uses: actions-cool/issues-helper@v3
