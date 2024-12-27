@@ -5,4 +5,8 @@
 - Removed `.github/dependabot.yml` file to avoid having Dependabot alerts
 - Fixed CSpell action by adding "deramond" to the dictionary
 
+## Information
+
+- BrowserStack workflow is disabled because it requires a BrowserStack account. However, it should be pretty easy to make it work afterward when the automatic release is set up in Bootstrap.
+
 ## Changes to replicate to Bootstrap repository
