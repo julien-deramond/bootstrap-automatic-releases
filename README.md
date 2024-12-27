@@ -15,6 +15,6 @@ Here are the changes that could be made to the original Bootstrap repository to 
 
 - Remove `dist` directory and add it to `.gitignore` ([c0797cb](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/c0797cb743c6f6b839b451d66a84a558871f9c3a))
 - Add eslint ignore rule `eslint-disable-line import/no-unresolved` to `/js/tests/integration/bundle.js` to fix `npm run lint` without having to build the library ([6d959ab](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/6d959ab51cf97644e512e99e71f0b8b6aa1605f7))
-- Change `npm run docs` to add an extra `npm run dist` command so that `/docs/5.3/customize/css-variables` can be built (it embeds the content of the dist CSS built file)
-- Adapt `.github/workflows/docs.yml` to use `npm run docs` instead of several sub-commands
+- Change `npm run docs` to add an extra `npm run dist` command so that `/docs/5.3/customize/css-variables` can be built (it embeds the content of the dist CSS built file) ([d8d05b0](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/d8d05b0d22526008959a461f3b32c36e5d897c44))
+- Adapt `.github/workflows/docs.yml` to use `npm run docs` instead of several sub-commands ([8dacbe0](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/8deacbe0ed3bf2cba76ebe2f34c4ce1340868588))
 - Adapt BrowserStack workflow (not done here because it requires a BrowserStack account)
