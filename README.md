@@ -7,6 +7,6 @@
 
 ## Information
 
-- BrowserStack workflow is disabled because it requires a BrowserStack account. However, it should be pretty easy to make it work afterward when the automatic release is set up in Bootstrap.
+- BrowserStack workflow is disabled because it requires a BrowserStack account. However, it should be pretty easy to make it work afterward when the automatic release is set up in Bootstrap. ([77eb394](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/77eb39406c5c8f1630983ecc70738cbc45820c34))
 
 ## Changes to replicate to Bootstrap repository
