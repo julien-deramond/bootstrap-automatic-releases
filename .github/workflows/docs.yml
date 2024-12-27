@@ -36,10 +36,7 @@ jobs:
         run: npm ci
 
       - name: Build docs
-        run: npm run docs-build
-
-      - name: Validate HTML
-        run: npm run docs-vnu
+        run: npm run docs
 
       - name: Run linkinator
         uses: JustinBeckwith/linkinator-action@v1
