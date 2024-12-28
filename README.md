@@ -21,3 +21,24 @@ Here are the changes that could be made to the original Bootstrap repository to 
 - Change `npm run docs` to add an extra `npm run dist` command so that `/docs/5.3/customize/css-variables` can be built (it embeds the content of the dist CSS built file) ([d8d05b0](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/d8d05b0d22526008959a461f3b32c36e5d897c44))
 - Adapt `.github/workflows/docs.yml` to use `npm run docs` instead of several sub-commands ([8dacbe0](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/8deacbe0ed3bf2cba76ebe2f34c4ce1340868588))
 - Adapt BrowserStack workflow (not done here because it requires a BrowserStack account)
+
+### Prepare the releases
+
+- New script `prepare-version.mjs` that takes 'patch', 'minor', or 'major' as an argument and prepares the _main_ branch for the next release.
+- New npm scripts to prepare the _main_ branch for the next release:
+  ```diff
+  "prepare-patch": "node build/prepare-version.mjs patch",
+  "prepare-minor": "node build/prepare-version.mjs minor",
+  "prepare-major": "node build/prepare-version.mjs major",
+  ```
+
+## New process
+
+### After the release
+
+Prepare the _main_ branch for the next release by running:
+- `npm run prepare-patch` for a patch release
+- `npm run prepare-minor` for a minor release
+- `npm run prepare-major` for a major release
+
+This will execute the `npm run release-version <version> <next-version>`. For example, if the current version is `5.3.0`, running `npm run prepare-patch` will execute `npm run release-version 5.3.0 5.3.1`.
