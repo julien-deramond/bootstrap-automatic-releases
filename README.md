@@ -24,6 +24,7 @@ Here are the changes that could be made to the original Bootstrap repository to 
 
 ### Prepare the releases
 
+[6622f72](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/6622f72e2c738e5f629e7d7953b129b81f33e9bd):
 - New script `prepare-version.mjs` that takes 'patch', 'minor', or 'major' as an argument and prepares the _main_ branch for the next release.
 - New npm scripts to prepare the _main_ branch for the next release:
   ```diff
