@@ -24,7 +24,7 @@ Here are the changes that could be made to the original Bootstrap repository to 
 
 ### Prepare the releases
 
-- New script `prepare-version.mjs` that takes 'patch', 'minor', or 'major' as an argument and prepares the _main_ branch for the next release.
+- New script [`prepare-version.mjs`](https://github.com/julien-deramond/bootstrap-automatic-releases/blob/main/build/prepare-version.mjs) that takes 'patch', 'minor', or 'major' as an argument and prepares the _main_ branch for the next release.
   - Changes the version in all files
   - Rename the {version} directories (e.g. 5.3 -> 5.4, or 5.3 -> 6.0) **for minor and major versions**
 - New npm scripts to prepare the _main_ branch for the next release:
