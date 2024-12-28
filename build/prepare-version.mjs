@@ -27,6 +27,15 @@ function prepare(semver) {
   }
 
   execSync(`node build/change-version.mjs ${version} ${newVersion}`)
+
+  if (semver === 'minor' || semver === 'major') {
+    // Rename directories (e.g. 5.3 -> 5.4, or 5.3 -> 6.0)
+    const versionShort = version.split('.').slice(0, 2).join('.')
+    const newVersionShort = newVersion.split('.').slice(0, 2).join('.')
+
+    execSync(`mv ./site/content/docs/${versionShort} ./site/content/docs/${newVersionShort}`)
+    execSync(`mv ./site/static/docs/${versionShort} ./site/static/docs/${newVersionShort}`)
+  }
 }
 
 async function main(args) {
