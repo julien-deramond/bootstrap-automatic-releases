@@ -8,7 +8,37 @@ This repository is a copy of the Bootstrap repository with a few changes to make
 - Fixed CSpell action by adding "deramond" to the dictionary ([45bd8d9](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/45bd8d9f05bb9f5c0e479ea95a83eac007a6d281))
 - Disabled BrowserStack workflow because it requires a BrowserStack account. However, it should be pretty easy to make it work afterward when the automatic release is set up in Bootstrap. ([77eb394](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/77eb39406c5c8f1630983ecc70738cbc45820c34))
 - Configured Netlify to deploy the _main_ branch at https://bootstrap-automatic-releases.netlify.app/
-- Changed package name for this repository to test out the automatic release: used `bootstrap-automatic-releases`
+- Changed package name for this repository in `package.json` to test out the automatic release: used `bootstrap-automatic-releases`
+  - This also required changing the name here:
+
+  ```diff
+  diff --git a/build/zip-examples.mjs b/build/zip-examples.mjs
+  index e5e39be..df254dc 100644
+  --- a/build/zip-examples.mjs
+  +++ b/build/zip-examples.mjs
+  @@ -18,7 +18,7 @@ const pkgJson = path.join(__dirname, '../package.json')
+  const pkg = JSON.parse(await fs.readFile(pkgJson, 'utf8'))
+  
+  const versionShort = pkg.config.version_short
+  -const distFolder = `bootstrap-${pkg.version}-examples`
+  +const distFolder = `bootstrap-automatic-releases-${pkg.version}-examples`
+  const rootDocsDir = '_site'
+  const docsDir = `${rootDocsDir}/docs/${versionShort}/`
+  
+  diff --git a/package.json b/package.json
+  index 7c3d4b4..90e3715 100644
+  --- a/package.json
+  +++ b/package.json
+  @@ -89,7 +89,7 @@
+      "release": "npm-run-all dist release-sri docs-build release-zip*",
+      "release-sri": "node build/generate-sri.mjs",
+      "release-version": "node build/change-version.mjs",
+  -    "release-zip": "cross-env-shell \"rm -rf bootstrap-$npm_package_version-dist bootstrap-$npm_package_version-dist.zip && cp -r dist/ bootstrap-$npm_package_version-dist && zip -qr9 bootstrap-$npm_package_version-dist.zip bootstrap-$npm_package_version-dist && rm -rf bootstrap-$npm_package_version-dist\"",
+  +    "release-zip": "cross-env-shell \"rm -rf bootstrap-automatic-releases-$npm_package_version-dist bootstrap-automatic-releases-$npm_package_version-dist.zip && cp -r dist/ bootstrap-automatic-releases-$npm_package_version-dist && zip -qr9 bootstrap-automatic-releases-$npm_package_version-dist.zip bootstrap-automatic-releases-$npm_package_version-dist && rm -rf bootstrap-automatic-releases-$npm_package_version-dist\"",
+      "release-zip-examples": "node build/zip-examples.mjs",
+      "dist": "npm-run-all --aggregate-output --parallel css js",
+      "test": "npm-run-all lint dist js-test docs-build docs-lint",
+  ```
 
 ## Changes
 

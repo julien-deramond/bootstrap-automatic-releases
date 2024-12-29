@@ -18,7 +18,7 @@ const pkgJson = path.join(__dirname, '../package.json')
 const pkg = JSON.parse(await fs.readFile(pkgJson, 'utf8'))
 
 const versionShort = pkg.config.version_short
-const distFolder = `bootstrap-${pkg.version}-examples`
+const distFolder = `bootstrap-automatic-releases-${pkg.version}-examples`
 const rootDocsDir = '_site'
 const docsDir = `${rootDocsDir}/docs/${versionShort}/`
 
