@@ -77,11 +77,13 @@ Here are the changes that could be made to the original Bootstrap repository to 
 > [!WARNING]
 > It would be possible to use GitHub Actions to publish the package to npm, but it would require a npm token. If the action is not set up correctly, the token could be exposed. Moreover, all the core team (with write access) is not currently allowed to publish to npm. Therefore, it would be better to use the manual process for now.
 
-New scripts
+New npm scripts
 - `publish-release`: to run the release script, publish the package to npm, push the changes to the _main_ branch, and create/push a new tag
 - `publish-patch`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
 - `publish-minor`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
 - `publish-major`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
+
+New script:
 - `build/publish-docs.mjs`: to publish the docs to the `gh-pages` branch
 
 > [!CAUTION]
