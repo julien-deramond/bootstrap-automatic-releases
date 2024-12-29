@@ -84,6 +84,9 @@ New scripts
 - `publish-major`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
 - `build/publish-docs.mjs`: to publish the docs to the `gh-pages` branch
 
+> [!CAUTION]
+> For now, the `build/publish-docs.mjs` script does nothing. This step should be done manually for now.
+
 #### How to publish a new release for a patch version
 
 - Run `npm run publish-patch` to publish a new patch version
@@ -111,14 +114,14 @@ Prepare the _main_ branch for the next release by running:
 
 This will execute the `npm run release-version <version> <next-version>`. For example, if the current version is `5.3.0`, running `npm run prepare-patch` will execute `npm run release-version 5.3.0 5.3.1`.
 
-For a minor or major release, for now, manually:
-- (TODO CHECK) Manually change `version_short` in `package.json`
-- (TODO CHECK) Add docs version to `site/data/docs-versions.yml`
-- (TODO CHECK) Manually change `docs_version` in `hugo.yml` and other references to the previous version
-- (TODO CHECK) Update redirects in docs frontmatter (`site/content/docs/_index.html`?)
-- (TODO CHECK) Move `site/content/docs/5.x` to `site/content/docs/5.x+1`
-- (TODO CHECK) Increment `site/static/docs/{version}` version
-- (TODO CHECK) `site/content/docs/{version}/**/*.md` should not always be modified
-
-For a major release, for now, manually:
-- Manually increment the version in `nuget/boosted.nuspec` and `nuget/boosted.sass.nuspec`
+> [!CAUTION]
+> For now, some steps must be done manually.
+> For a minor or major release:
+> - Manually change `version_short` in `package.json`
+> - Add docs version to `site/data/docs-versions.yml`
+> - Manually change `docs_version` in `hugo.yml` and other references to the previous version
+> - Update redirects in docs frontmatter (`site/content/docs/_index.html`?)
+> - Check that `site/content/docs/{version}/**/*.md` are not modified (should be avoided by the script)
+> 
+> For a major release, for now, manually:
+> - Manually increment the version in `nuget/boosted.nuspec` and `nuget/boosted.sass.nuspec`
