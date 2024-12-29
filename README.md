@@ -69,22 +69,15 @@ Here are the changes that could be made to the original Bootstrap repository to 
 > [!NOTE]
 > This test was done by publishing this https://www.npmjs.com/package/bootstrap-automatic-releases package publicly. It will be deleted afterward.
 
-#### Old process
+> [!WARNING]
+> It would be possible to use GitHub Actions to publish the package to npm, but it would require a npm token. If the action is not set up correctly, the token could be exposed. Moreover, all the core team (with write access) is not currently allowed to publish to npm. Therefore, it would be better to use the manual process for now.
 
-Previously, the package was published to npm with the following manual steps:
-- `npm run release`
-- `npm pack`
-- `npm publish` (with double-authentication)
-
-Then, it was necessary to tag, push the tag, and create a release on GitHub.
-
-#### New process
-
-In terms of configuration, the publishing access for the "bootstrap" package must be set to "Require two-factor authentication or an automation or granular access token".
-
-TODO
-
-## New process
+New scripts
+- `publish-release`: to run the release script, publish the package to npm, push the changes to the _main_ branch, and create/push a new tag
+- `publish-patch`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
+- `publish-minor`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
+- `publish-major`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
+- `build/publish-docs.mjs`: to publish the docs to the `gh-pages` branch
 
 ### After the release
 
