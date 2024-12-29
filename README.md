@@ -64,6 +64,18 @@ Here are the changes that could be made to the original Bootstrap repository to 
   + "prepare-major": "node build/prepare-version.mjs major",
   ```
 
+### Release
+
+> [!NOTE]
+> This test was done by publishing this https://www.npmjs.com/package/bootstrap-automatic-releases package publicly. It will be deleted afterward.
+
+For now, the package is published to npm with the following manual steps:
+- `npm run release`
+- `npm pack`
+- `npm publish` (with double-authentication)
+
+- In terms of configuration, the publishing access for the "bootstrap" package must be set to "Require two-factor authentication or an automation or granular access token".
+
 ## New process
 
 ### After the release
