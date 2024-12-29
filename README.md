@@ -51,6 +51,11 @@ Here are the changes that could be made to the original Bootstrap repository to 
 - Change `npm run docs` to add an extra `npm run dist` command so that `/docs/5.3/customize/css-variables` can be built (it embeds the content of the dist CSS built file) ([d8d05b0](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/d8d05b0d22526008959a461f3b32c36e5d897c44))
 - Adapt `.github/workflows/docs.yml` to use `npm run docs` instead of several sub-commands ([8dacbe0](https://github.com/julien-deramond/bootstrap-automatic-releases/commit/8deacbe0ed3bf2cba76ebe2f34c4ce1340868588))
 - Adapt BrowserStack workflow (not done here because it requires a BrowserStack account)
+- Added the package name to `gitignore`:
+  ```diff
+  +# Ignore built files
+  +bootstrap-automatic-releases-*
+  ```
 
 ### Prepare the releases
 
@@ -82,10 +87,20 @@ New scripts
 #### How to publish a new release for a patch version
 
 - Run `npm run publish-patch` to publish a new patch version
+- Manually build and publish the package to Nuget
+- Manually create the GitHub release from the tag
 
 #### How to publish a new release for a minor version
 
+- Run `npm run publish-minor` to publish a new patch version
+- Manually build and publish the package to Nuget
+- Manually create the GitHub release from the tag
+
 #### How to publish a new release for a major version
+
+- Run `npm run publish-major` to publish a new patch version
+- Manually build and publish the package to Nuget
+- Manually create the GitHub release from the tag
 
 ### After the release
 
@@ -95,3 +110,15 @@ Prepare the _main_ branch for the next release by running:
 - `npm run prepare-major` for a major release
 
 This will execute the `npm run release-version <version> <next-version>`. For example, if the current version is `5.3.0`, running `npm run prepare-patch` will execute `npm run release-version 5.3.0 5.3.1`.
+
+For a minor or major release, for now, manually:
+- (TODO CHECK) Manually change `version_short` in `package.json`
+- (TODO CHECK) Add docs version to `site/data/docs-versions.yml`
+- (TODO CHECK) Manually change `docs_version` in `hugo.yml` and other references to the previous version
+- (TODO CHECK) Update redirects in docs frontmatter (`site/content/docs/_index.html`?)
+- (TODO CHECK) Move `site/content/docs/5.x` to `site/content/docs/5.x+1`
+- (TODO CHECK) Increment `site/static/docs/{version}` version
+- (TODO CHECK) `site/content/docs/{version}/**/*.md` should not always be modified
+
+For a major release, for now, manually:
+- Manually increment the version in `nuget/boosted.nuspec` and `nuget/boosted.sass.nuspec`

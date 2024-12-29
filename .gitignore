@@ -42,3 +42,6 @@ Thumbs.db
 /dist-sass/
 /js/coverage/
 /node_modules/
+
+# Ignore built files
+bootstrap-automatic-releases-*
