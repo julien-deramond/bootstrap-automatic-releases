@@ -79,6 +79,14 @@ New scripts
 - `publish-major`: to run the `publish-release` script, and after that, publish the docs to the `gh-pages` branch too
 - `build/publish-docs.mjs`: to publish the docs to the `gh-pages` branch
 
+#### How to publish a new release for a patch version
+
+- Run `npm run publish-patch` to publish a new patch version
+
+#### How to publish a new release for a minor version
+
+#### How to publish a new release for a major version
+
 ### After the release
 
 Prepare the _main_ branch for the next release by running:
